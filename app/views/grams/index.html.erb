@@ -1,0 +1,16 @@
+Index 
+
+<% @grams.each do |gram| %>
+    <div>
+        <div>
+            <%= link_to(gram.title, gram) %>
+        </div>
+        
+        <%= gram.description %>
+        <%= gram.location_code %>
+        
+        <div>
+            <%= link_to('Delete', gram, method: :delete)%>
+        </div>
+    </div><hr>
+<% end %>
