@@ -6,12 +6,21 @@ Index
             <%= link_to(gram.title, gram) %>
         </div>
         
-        <%= time_ago_in_words(gram.created_at) + ' ago'%>
-        <%= gram.description %>
-        <%= gram.location_code %>
+        <div>
+            <%= time_ago_in_words(gram.created_at) + ' ago'%>
+        </div>
+        <div>
+            <%= gram.description %>
+        </div>
+        <div>
+            <%= country_name(gram.location_code) %>
+        </div>
         
         <div>
             <%= link_to('Delete', gram, method: :delete)%>
+            <%#= link_to(t(:delete), gram, method: :delete)%>
         </div>
     </div><hr>
 <% end %>
+
+<%= link_to "Create New Grams", new_gram_path %>

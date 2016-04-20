@@ -1,5 +1,13 @@
 show gram
 
+<div>
 <%= @gram.title %>
+</div>
+<div>
 <%= @gram.description %>
-<%= @gram.location_code %>
+</div>
+<div>
+<%= country_name(@gram.location_code) %>
+</div>
+
+<%= link_to 'Index', grams_path %>
