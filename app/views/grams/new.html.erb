@@ -1,6 +1,6 @@
 New Gram
 
-<% if @gram.errors.size > 0 %>
+<% if @gram.errors.present? %>
     <div>
         <%= @gram.errors.full_messages %>
     </div>

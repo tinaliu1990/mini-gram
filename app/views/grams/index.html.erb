@@ -1,4 +1,4 @@
-Index 
+Index
 
 <% @grams.each do |gram| %>
     <div>
@@ -6,6 +6,7 @@ Index
             <%= link_to(gram.title, gram) %>
         </div>
         
+        <%= time_ago_in_words(gram.created_at) + ' ago'%>
         <%= gram.description %>
         <%= gram.location_code %>
         

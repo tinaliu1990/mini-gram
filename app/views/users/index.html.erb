@@ -1,0 +1,17 @@
+User Index
+
+<% @users.each do |user|%>
+    <div>
+        <%= link_to user.name, user%>
+    </div>
+    
+    <div>
+        <%= user.email%>
+    </div>
+    
+    <div>
+        <%= link_to('Delete', user, method: :delete) %>    
+    </div>
+<% end %>
+
+<%= link_to('New User', new_user_path) %>

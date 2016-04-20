@@ -1,0 +1,21 @@
+New User
+
+<% if @user.errors.size > 0 %>
+    <%= @user.errors.full_messages %>
+<% end %>
+
+<%= form_for @user do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+    
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
