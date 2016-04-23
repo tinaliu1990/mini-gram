@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minigram</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <script>
+    UPLOADCARE_PUBLIC_KEY = "4f6e83fa8654df0e817c";
+  </script>
+  <script charset="utf-8" src="//ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js"></script>
+  
+</head>
+<body>
+  <h1>Minigram</h1>
+  
+  <% if flash[:notice].present?%>
+    <div>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+<%= yield %>
+
+</body>
+</html>

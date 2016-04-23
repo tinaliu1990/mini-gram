@@ -1,29 +1,38 @@
-New Gram
-
-<% if @gram.errors.present? %>
-    <div>
-        <%= @gram.errors.full_messages %>
-    </div>
-<% end %>
-
-<%= form_for @gram do |f| %>
-    <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </div>
+<div class = 'row'>
+    <div class = 'col-sm-6 col-sm-offset-3'>
+    <% if @gram.errors.present? %>
+        <div class = 'alert alert-danger'>
+            <ul>
+                <% @gram.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     
-    <div>
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-    </div>
+    <%= form_for @gram do |f| %>
     
-    <div>
-        <%= f.label :location_code %>
-        <%= f.country_select :location_code, {include_blank: true, priority_countries: ["SG", "MY"]} %>
-    </div>
-    
-    <div>
-        <%= f.submit %>
-        <%= link_to "Back", grams_path %>
-    </div>
-<% end %>
+        <div class = 'form-group text-center'>
+            <%= f.hidden_field :image_url, role: 'uploadcare-uploader', data: {crop: '600:600', 'images_only' => true }%>
+        </div>
+        <div class = 'form-group'>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        
+        <div class = 'form-group'>
+            <%= f.label :description %>
+            <%= f.text_area :description, class: 'form-control' %>
+        </div>
+        
+        <div class = 'form-group'>
+            <%= f.label :location_code %>
+            <%= f.country_select :location_code, {include_blank: true, priority_countries: ["SG", "MY"]}, class: 'form-control' %>
+        </div>
+        
+        <div>
+            <%= f.submit class: 'btn btn-success' %>
+            <%= link_to "Back", grams_path, class: 'btn btn-default' %>
+        </div>
+    <% end %>
+</div>

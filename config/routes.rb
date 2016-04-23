@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'grams#index'
   resources :grams, except: [:edit, :update]
   
   resources :users, except: [:edit, :update]

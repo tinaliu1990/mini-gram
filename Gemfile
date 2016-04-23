@@ -47,3 +47,5 @@ end
 
 gem 'country_select'
 gem 'kaminari'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'

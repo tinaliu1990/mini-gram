@@ -1,0 +1,29 @@
+<% @grams.each do |gram| %>
+    <div>
+        <div>
+        <%= image_tag gram.image_url %>
+        </div>
+        <div>
+            <%= link_to(gram.title, gram) %>
+        </div>
+        
+        <div>
+            <%= time_ago_in_words(gram.created_at) + ' ago'%>
+        </div>
+        <div>
+            <%= gram.description %>
+        </div>
+        <div>
+            <%= country_name(gram.location_code) %>
+        </div>
+        
+        <div>
+            <%= link_to('Delete', gram, method: :delete)%>
+            <%#= link_to(t(:delete), gram, method: :delete)%>
+        </div>
+    </div><hr>
+<% end %>
+
+<%= paginate @grams%>
+
+<%= link_to "Create New Grams", new_gram_path %>
