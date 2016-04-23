@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :grams, except: [:edit, :update]
   
   resources :users, except: [:edit, :update]
+  
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
